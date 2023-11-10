@@ -1,54 +1,12 @@
-import palavras
 import random, math
 from colorama import Fore, Back, Style, init
-init(autoreset=True)
-print(Fore.RED + 'Texto em vermelho')
+from funcoes import filtra,inidica_posicao,inicializa
+
 
 
 
 
 letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-def filtra(palavras,letras):
-    palavras_novas = set()
-
-    for palavra in palavras:
-        palavra = palavra.strip()
-        palavra = palavra.lower()
-        palavra_normais = ''.join(i for i in palavra if i.isalnum())
-
-        if len(palavra_normais) == letras:
-            palavras_novas.add(palavra_normais)
-    return list(palavras_novas)
-    
-
-
-def inicializa(palavras):
-    configuração = {
-        'n': len(palavras[0]),
-        'tentativas':len(palavras[0])+1,
-        'especuladas': [],
-        'sorteada': random.choice(palavras)
-        
-    }
-    return configuração
-
-def inidica_posicao(sorteada,especulada):
-    if len(especulada) != len(sorteada):
-        return []
-    
-    lista = []
-    for i in range(len(sorteada)):
-        if especulada[i] == sorteada[i]:
-            lista.append(0)
-        elif especulada[i] in sorteada:
-            lista.append(1)
-        elif especulada[i] not in sorteada:
-            lista.append(2)
-    
-    return lista
-
-
-
 
 
 # Montando cabeçalho do jogo
@@ -63,7 +21,7 @@ print(f"""
 
     
 
-lista_escolhida= filtra(palavras,letras)
+lista_escolhida= filtra(PALAVRAS,letras)
 dicio_inicial = inicializa(lista_escolhida)
 resposta_escolhida = dicio_inicial['sorteada']
 
@@ -80,7 +38,15 @@ while tentativas < dicio_inicial['tentativas']:
   else:
       resultado_parcial = ''
       for posicao in range(len(comparacao)):
-          
+          if comparacao[posicao] == 0:
+            resultado_parcial += (f'\033[0;32;40m {chute[posicao]} \033[m')
+          elif comparacao[posicao] == 1:             
+            resultado_parcial += (f'\033[0;33;40m {chute[posicao]} \033[m')
+          elif comparacao[posicao] == 2:
+            resultado_parcial += (f'\033[0;37;40m {chute[posicao]} \033[m')
+      print(resultado_parcial)
+      tentativas +=1
+
   
 
    

@@ -1,4 +1,5 @@
 import random, math
+from palavras import PALAVRAS
 from colorama import Fore, Back, Style, init
 init(autoreset=True)
 print(Fore.RED + 'Texto em vermelho')
@@ -7,10 +8,10 @@ print(Fore.RED + 'Texto em vermelho')
 
 
 
-def filtra(palavras,letras):
+def filtra(PALAVRAS,letras):
     palavras_novas = set()
 
-    for palavra in palavras:
+    for palavra in PALAVRAS:
         palavra = palavra.strip()
         palavra = palavra.lower()
         palavra_normais = ''.join(i for i in palavra if i.isalnum())
@@ -21,12 +22,12 @@ def filtra(palavras,letras):
     
 
 
-def inicializa(palavras):
+def inicializa(PALAVRAS):
     configuração = {
-        'n': len(palavras[0]),
-        'tentativas':len(palavras[0])+1,
+        'n': len(PALAVRAS[0]),
+        'tentativas':len(PALAVRAS[0])+1,
         'especuladas': [],
-        'sorteada': random.choice(palavras)
+        'sorteada': random.choice(PALAVRAS)
         
     }
     return configuração
