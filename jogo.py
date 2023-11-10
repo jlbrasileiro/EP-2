@@ -1,6 +1,6 @@
 import random, math
-from colorama import Fore, Back, Style, init
 from funcoes import filtra,inidica_posicao,inicializa
+from palavras import PALAVRAS
 
 
 

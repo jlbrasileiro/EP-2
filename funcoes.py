@@ -47,13 +47,6 @@ def inidica_posicao(sorteada,especulada):
     
     return lista
 
-cores = {
-    'amarelo': '\033[93m',
-    'azul': '\033[94m',,
-    'cinza': '\033[90m'
-  
-}
-
 
 
 
