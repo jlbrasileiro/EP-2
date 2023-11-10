@@ -1,4 +1,3 @@
-import palavras
 import random, math
 from colorama import Fore, Back, Style, init
 init(autoreset=True)
@@ -7,7 +6,7 @@ print(Fore.RED + 'Texto em vermelho')
 
 
 
-letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
 def filtra(palavras,letras):
     palavras_novas = set()
 
@@ -47,51 +46,17 @@ def inidica_posicao(sorteada,especulada):
     
     return lista
 
-
-
-
-
-# Montando cabeçalho do jogo
-print(f"""
-         ========================
-        |                         |
-        | Bem vindos ao jogo termo|
-        |                         |
-          ===Desing de software===""")
-
-
-
-    
-
-lista_escolhida= filtra(palavras,letras)
-dicio_inicial = inicializa(lista_escolhida)
-resposta_escolhida = dicio_inicial['sorteada']
-
-tentativas = 0
-while tentativas < dicio_inicial['tentativas']:
-  chute =  input(f'Tente uma palavra com 5 letras')
-  comparacao = inidica_posicao(dicio_inicial['sorteada'],chute)
-
-  if comparacao == []:
-      print(f'Essa palavra não possui 5 letras , tente de novo com uma nova palavra com 5 letras')
-      tentativas = tentativas
-  if chute not in resposta_escolhida:
-    print(f'Palavra desconhecida')
-  else:
-      resultado_parcial = ''
-      for posicao in range(len(comparacao)):
-          
+cores = {
+    'amarelo': '\033[93m',
+    'azul': '\033[94m',,
+    'cinza': '\033[90m'
   
-
-   
-
+}
 
 
 
-    
 
-    
 
-          
+
 
 
