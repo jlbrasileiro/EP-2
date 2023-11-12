@@ -12269,8 +12269,3 @@ PALAVRAS = [
     "zurrarieis", "zurrarmo", "zurrarmos", "zurras", "zurrasse", "zurrasseis", "zurrassem", "zurrassemos", "zurrasses", "zurraste", "zurrastes", "zurrava", "zurravam", "zurravamos", "zurravas", "zurraveis", "zurre", "zurrei", "zurreis", "zurrem", 
     "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou", 
 ]
-for i in PALAVRAS:
-    palavra5 = []
-    if len(PALAVRAS[i]) == 5:
-        palavra5.append(PALAVRAS[i])
-        

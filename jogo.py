@@ -19,7 +19,6 @@ print(f"""
 
 
 
-    
 
 lista_escolhida= filtra(PALAVRAS,letras)
 dicio_inicial = inicializa(lista_escolhida)
@@ -46,6 +45,20 @@ while tentativas < dicio_inicial['tentativas']:
             resultado_parcial += (f'\033[0;37;40m {chute[posicao]} \033[m')
       print(resultado_parcial)
       tentativas +=1
+
+      c = comparacao.count(0)
+
+      if c == letras:
+         tentativas = dicio_inicial['tentativas']
+      else:
+         tentativas += 1
+  if c == letras and tentativas < dicio_inicial['tentativas']:
+     print(f'\033[1;31;40m Uhuu, palavra correta \033[m') 
+  elif c != letras and tentativas == dicio_inicial['tentativas']:
+     print(f'\033[1;31;40m] Ihhhhh, não conseguiu :( ... A palavra era {resposta_escolhida}')
+      
+
+  
 
   
 

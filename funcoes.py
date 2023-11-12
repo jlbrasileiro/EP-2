@@ -1,11 +1,5 @@
 import random, math
 from palavras import PALAVRAS
-from colorama import Fore, Back, Style, init
-init(autoreset=True)
-print(Fore.RED + 'Texto em vermelho')
-
-
-
 
 
 def filtra(PALAVRAS,letras):
