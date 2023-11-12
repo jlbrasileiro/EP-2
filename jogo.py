@@ -25,18 +25,17 @@ print(f'''Comandos:desisto
       ''')
 #letras é o número de letras da palavra
 for i in range(len(palavras)):
-   
-  letras =  len(palavras[i])
+  letras = len(palavras[i])
 #Escolhendo a lista de palavras 
 lista_escolhida= filtra(palavras,letras)
 #Escolhendo o dicionário com as configurações do jogo
 dicio_inicial = inicializa(lista_escolhida,5)
 #Sorteando a palavra 
 resposta_escolhida = dicio_inicial['sorteada']
-
 tentativas = 0
 while tentativas < dicio_inicial['tentativas']:
-  chute =  input('Tente uma palavra com 5 letras:').lower()
+  chute = input('Tente uma palavra com 5 letras:').lower()
+  
 #compara a palavra sorteada com o chute feito
   comparacao = inidica_posicao(dicio_inicial['sorteada'],chute)
 

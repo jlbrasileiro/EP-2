@@ -35,12 +35,13 @@ def inicializa(palavras, n):
     
     configuracao = {
         'n': n,
-        'tentativas': 6,
+        'tentativas': n + 1,
         'especuladas': [],
         'sorteada': random.choice(palavras)
         
     }
-    while configuracao['sorteada'] is None or len(configuracao['sorteada']) != n:
+    
+    while len(configuracao['sorteada']) != n:
         configuracao['sorteada'] = random.choice(palavras)
     return configuracao
 
