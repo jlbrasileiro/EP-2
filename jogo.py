@@ -2,7 +2,7 @@
 import random, math
 from funcoes import filtra,inidica_posicao,inicializa
 from palavrass import palavras
-
+import unicodedata
 # Montando cabeçalho do jogo
 print("""
          ========================
@@ -44,6 +44,7 @@ while tentativas < dicio_inicial['tentativas']:
       print('Essa palavra não possui 5 letras, tente novamnete com o número correto')
       tentativas = tentativas
   elif chute == resposta_escolhida:
+      
       print(f'\033[1;31;40m Parabéns! Você acertou a palavra: {resposta_escolhida} \033[m')
       break
   else:

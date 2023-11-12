@@ -1,5 +1,5 @@
 import random
-
+from unidecode import unidecode
 #Filtra as palavras para determinados tamanhos e com letras minusculas
 def filtra(palavras,letras):
     palavras_novas = set()
@@ -7,7 +7,7 @@ def filtra(palavras,letras):
     for palavra in palavras:
         palavra = palavra.strip()
         palavra = palavra.lower()
-        palavra_normais = ''.join(i for i in palavra if i.isalpha())
+        palavra_normais = ''.join(i for i in unidecode(palavra)if i.isalpha())
 
         if len(palavra_normais) == letras:
             palavras_novas.add(palavra_normais)
@@ -32,7 +32,7 @@ def inidica_posicao(sorteada,especulada):
 
 #Cria um dicionário com as configurações do jogo
 def inicializa(palavras):
-
+    
     configuração = {
         'n': 5,
         'tentativas': 6,
@@ -40,6 +40,7 @@ def inicializa(palavras):
         'sorteada': random.choice(palavras)
         
     }
+    
     return configuração
 
 
