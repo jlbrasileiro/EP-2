@@ -1,4 +1,4 @@
-PALAVRAS = [
+palavras = [
     "a", "Aarao", "aba", "abacate", "abacateiro", "abacateiros", "abacates", "abacaxi", "abacaxis", "abaciais", "abacial", "abaco", "abacos", "abade", "abades", "abadessa", "abadessas", "abadia", "abadias", "abafa", 
     "abafada", "abafadas", "abafadica", "abafadicas", "abafadico", "abafadicos", "abafado", "abafados", "abafai", "abafais", "abafam", "abafamento", "abafamentos", "abafamo", "abafamos", "abafando", "abafar", "abafara", "abafaram", "abafaramos", 
     "abafarao", "abafaras", "abafardes", "abafarei", "abafareis", "abafarem", "abafaremo", "abafaremos", "abafares", "abafaria", "abafariam", "abafariamos", "abafarias", "abafarieis", "abafarmo", "abafarmos", "abafas", "abafasse", "abafasseis", "abafassem", 
@@ -12269,3 +12269,6 @@ PALAVRAS = [
     "zurrarieis", "zurrarmo", "zurrarmos", "zurras", "zurrasse", "zurrasseis", "zurrassem", "zurrassemos", "zurrasses", "zurraste", "zurrastes", "zurrava", "zurravam", "zurravamos", "zurravas", "zurraveis", "zurre", "zurrei", "zurreis", "zurrem", 
     "zurremo", "zurremos", "zurres", "zurro", "zurros", "zurrou", 
 ]
+
+
+    

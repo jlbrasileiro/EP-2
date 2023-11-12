@@ -1,44 +1,56 @@
+#Importações necessárias
 import random, math
 from funcoes import filtra,inidica_posicao,inicializa
-from palavras import PALAVRAS
-
-
-
-
-
-letras = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-
+from palavrass import palavras
 
 # Montando cabeçalho do jogo
-print(f"""
+print("""
          ========================
         |                         |
         | Bem vindos ao jogo termo|
         |                         |
           ===Desing de software===""")
+# Montando cabeçalho de regras
+print(f'''Comandos:desisto
+      
+      Regras: 
+      - Você têm 6 tentativas para acertar uma palavra aleatória de 5 letras.
+      - A cada tentativa a palavra testada terá suas letras coloridas conforme:
+       .\033[0;34;40m {'Azul'} \033[m: a letra está na posição correta;
+       .\033[0;33;40m] {'Amarelo'} \033[m: a palavra tem a letra na posição correta;
+       .\033[0;37;40m] {'Cinza'}  \033[m: a palavra não tem a letra.
+      - Os acentos são ignorados;
+      - As palavras podem possuir letras repetidas.
 
-
-
-
-lista_escolhida= filtra(PALAVRAS,letras)
+      ''')
+#letras é o número de letras da palavra
+for i in range(len(palavras)):
+   
+  letras =  len(palavras[i])
+#Escolhendo a lista de palavras 
+lista_escolhida= filtra(palavras,letras)
+#Escolhendo o dicionário com as configurações do jogo
 dicio_inicial = inicializa(lista_escolhida)
+#Sorteando a palavra 
 resposta_escolhida = dicio_inicial['sorteada']
 
 tentativas = 0
 while tentativas < dicio_inicial['tentativas']:
-  chute =  input(f'Tente uma palavra com 5 letras')
+  chute =  input('Tente uma palavra com 5 letras:').lower()
+ 
   comparacao = inidica_posicao(dicio_inicial['sorteada'],chute)
 
   if comparacao == []:
-      print(f'Essa palavra não possui 5 letras , tente de novo com uma nova palavra com 5 letras')
+      print('Essa palavra não possui 5 letras, tente novamnete com o número correto')
       tentativas = tentativas
-  if chute not in resposta_escolhida:
-    print(f'Palavra desconhecida')
+  elif chute == resposta_escolhida:
+      print(f'\033[1;31;40m Parabéns! Você acertou a palavra: {resposta_escolhida} \033[m')
+      break
   else:
       resultado_parcial = ''
       for posicao in range(len(comparacao)):
           if comparacao[posicao] == 0:
-            resultado_parcial += (f'\033[0;32;40m {chute[posicao]} \033[m')
+            resultado_parcial += (f'\033[0;34;40m {chute[posicao]} \033[m')
           elif comparacao[posicao] == 1:             
             resultado_parcial += (f'\033[0;33;40m {chute[posicao]} \033[m')
           elif comparacao[posicao] == 2:
@@ -46,19 +58,8 @@ while tentativas < dicio_inicial['tentativas']:
       print(resultado_parcial)
       tentativas +=1
 
-      c = comparacao.count(0)
-
-      if c == letras:
-         tentativas = dicio_inicial['tentativas']
-      else:
-         tentativas += 1
-  if c == letras and tentativas < dicio_inicial['tentativas']:
-     print(f'\033[1;31;40m Uhuu, palavra correta \033[m') 
-  elif c != letras and tentativas == dicio_inicial['tentativas']:
-     print(f'\033[1;31;40m] Ihhhhh, não conseguiu :( ... A palavra era {resposta_escolhida}')
-      
-
-  
+if tentativas == dicio_inicial['tentativas']:
+   print(f'\033[1;31;40m Ihhhhh, não conseguiu :( ... A palavra era {resposta_escolhida} \033[m')
 
   
 

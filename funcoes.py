@@ -1,31 +1,19 @@
-import random, math
-from palavras import PALAVRAS
+import random
 
-
-def filtra(PALAVRAS,letras):
+#Filtra as palavras para determinados tamanhos e com letras minusculas
+def filtra(palavras,letras):
     palavras_novas = set()
 
-    for palavra in PALAVRAS:
+    for palavra in palavras:
         palavra = palavra.strip()
         palavra = palavra.lower()
-        palavra_normais = ''.join(i for i in palavra if i.isalnum())
+        palavra_normais = ''.join(i for i in palavra if i.isalpha())
 
         if len(palavra_normais) == letras:
             palavras_novas.add(palavra_normais)
     return list(palavras_novas)
     
-
-
-def inicializa(PALAVRAS):
-    configuração = {
-        'n': len(PALAVRAS[0]),
-        'tentativas':len(PALAVRAS[0])+1,
-        'especuladas': [],
-        'sorteada': random.choice(PALAVRAS)
-        
-    }
-    return configuração
-
+#Mostra se as letras e suas posições estão corretas
 def inidica_posicao(sorteada,especulada):
     if len(especulada) != len(sorteada):
         return []
@@ -42,8 +30,17 @@ def inidica_posicao(sorteada,especulada):
     return lista
 
 
+#Cria um dicionário com as configurações do jogo
+def inicializa(palavras):
 
-
+    configuração = {
+        'n': 5,
+        'tentativas': 6,
+        'especuladas': [],
+        'sorteada': random.choice(palavras)
+        
+    }
+    return configuração
 
 
 
