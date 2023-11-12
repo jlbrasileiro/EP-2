@@ -1,3 +1,2 @@
 # EP-2
-Exercício Programa 2-Jogo termo
-O objetivo deste jogo é 
+Repositório do EP2 - Exercício Programa 2
