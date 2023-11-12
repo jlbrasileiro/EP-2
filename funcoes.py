@@ -31,17 +31,18 @@ def inidica_posicao(sorteada,especulada):
 
 
 #Cria um dicionário com as configurações do jogo
-def inicializa(palavras):
+def inicializa(palavras, n):
     
-    configuração = {
-        'n': 5,
+    configuracao = {
+        'n': n,
         'tentativas': 6,
         'especuladas': [],
         'sorteada': random.choice(palavras)
         
     }
-    
-    return configuração
+    while configuracao['sorteada'] is None or len(configuracao['sorteada']) != n:
+        configuracao['sorteada'] = random.choice(palavras)
+    return configuracao
 
 
 

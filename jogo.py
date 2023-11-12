@@ -30,7 +30,7 @@ for i in range(len(palavras)):
 #Escolhendo a lista de palavras 
 lista_escolhida= filtra(palavras,letras)
 #Escolhendo o dicionário com as configurações do jogo
-dicio_inicial = inicializa(lista_escolhida)
+dicio_inicial = inicializa(lista_escolhida,5)
 #Sorteando a palavra 
 resposta_escolhida = dicio_inicial['sorteada']
 
