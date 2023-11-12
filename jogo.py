@@ -37,7 +37,7 @@ resposta_escolhida = dicio_inicial['sorteada']
 tentativas = 0
 while tentativas < dicio_inicial['tentativas']:
   chute =  input('Tente uma palavra com 5 letras:').lower()
- 
+#compara a palavra sorteada com o chute feito
   comparacao = inidica_posicao(dicio_inicial['sorteada'],chute)
 
   if comparacao == []:
@@ -57,7 +57,7 @@ while tentativas < dicio_inicial['tentativas']:
             resultado_parcial += (f'\033[0;37;40m {chute[posicao]} \033[m')
       print(resultado_parcial)
       tentativas +=1
-
+#Depois do número máximo de tentativas
 if tentativas == dicio_inicial['tentativas']:
    print(f'\033[1;31;40m Ihhhhh, não conseguiu :( ... A palavra era {resposta_escolhida} \033[m')
 
